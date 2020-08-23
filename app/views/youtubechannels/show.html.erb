@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @youtubechannel.url %>
+</p>
+
+<p>
+  <strong>Subscriber:</strong>
+  <%= @youtubechannel.subscriber %>
+</p>
+
+<p>
+  <strong>Youtuber:</strong>
+  <%= @youtubechannel.youtuber_id %>
+</p>
+
+<%= link_to 'Edit', edit_youtubechannel_path(@youtubechannel) %> |
+<%= link_to 'Back', youtubechannels_path %>

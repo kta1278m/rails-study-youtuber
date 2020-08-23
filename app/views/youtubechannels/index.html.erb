@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Youtubechannels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Subscriber</th>
+      <th>Youtuber</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @youtubechannels.each do |youtubechannel| %>
+      <tr>
+        <td><%= youtubechannel.url %></td>
+        <td><%= youtubechannel.subscriber %></td>
+        <td><%= youtubechannel.youtuber_id %></td>
+        <td><%= link_to 'Show', youtubechannel %></td>
+        <td><%= link_to 'Edit', edit_youtubechannel_path(youtubechannel) %></td>
+        <td><%= link_to 'Destroy', youtubechannel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Youtubechannel', new_youtubechannel_path %>

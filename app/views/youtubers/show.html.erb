@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @youtuber.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @youtuber.age %>
+</p>
+
+<%= link_to 'Edit', edit_youtuber_path(@youtuber) %> |
+<%= link_to 'Back', youtubers_path %>

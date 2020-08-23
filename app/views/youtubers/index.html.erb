@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Youtubers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Channels Count</th>
+      <th>Channels</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @youtubers.each do |youtuber| %>
+      <tr>
+        <td><%= youtuber.name %></td>
+        <td><%= youtuber.age %></td>
+        <td>
+          <%= youtuber.youtubechannels.count %>
+        </td>
+        <td>
+          <ul>
+          <% youtuber.youtubechannels.each do |channel| %>
+            <li>
+            <%= link_to channel.url, channel.url %>
+            </li>
+          <% end %>
+          </ul>
+        </td>
+        <td><%= link_to 'Show', youtuber %></td>
+        <td><%= link_to 'Edit', edit_youtuber_path(youtuber) %></td>
+        <td><%= link_to 'Destroy', youtuber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Youtuber', new_youtuber_path %>
